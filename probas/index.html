@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" constent="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <script async src="script.js"></script>
+    <!-- O async sirve para que se decargue o script mentras se ejecuta o html, para dsp cando se ejecute funcione e nn dea null. Porque lle da tempo a crear o id paragrafo e dsp cando se inicia o script xa está creado. Si hay 2, non hai garantía de que se executen en orden, porque si o segundo é mais pequeno que o primeiro execútase primeiro o 2 e dsp o 1. Para solucionar esto está i defer, que primeiro lee todo o html e dsp ejecuta o script, e si hai 2 faino en orden, solucionando os 2 problemas. Solo funcionan co src  -->
+    <!-- Importante usar 'use strict' ao principio do documento porque avisa dos erroes do javascript por consola, sinon non avisa -->
+    <!-- Usar let y const, no var!!!!! -->
+  </head>
+  <body>
+    <p id="paragrafo">Ola mundo!</p>
+  </body>
+</html>
