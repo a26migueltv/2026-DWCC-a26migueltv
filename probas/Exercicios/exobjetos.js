@@ -140,7 +140,7 @@ function capitalizar(frase) {
 console.log(capitalizar('hOLA que TAL estás'));
 
 // Otros Ejercicios (desestructuración de arrays)
-// Ej 1:
+// Ej 1a:
 const players = [
   [
     'Neuer',
@@ -169,4 +169,117 @@ const players = [
     'Gotze',
   ],
 ];
-let [players1, players2] = players;
+const [players1, players2] = players;
+console.log(players1);
+console.log(players2);
+//EJ 1b
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+//EJ 1c
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+//EJ 1d
+const playersFinal = [...players1, 'Thiago', 'Coutinho', 'Periscic'];
+console.log(playersFinal);
+//EJ 2
+const variables = [
+  'underscore_case',
+  'first_name',
+  'Some_Variable',
+  'calculate_AGE',
+  'delayed_departure',
+];
+for (const variable of variables) {
+  const [first, second] = variable.toLowerCase().trim().split('_');
+  const output = `${first}${second.replace(
+    second[0],
+    second[0].toUpperCase(),
+  )}`;
+  console.log(`${output}`);
+}
+//EJ 3
+// const flightsInfo =
+// "_Delayed_Departure;scq93766109;bio2133758440;11:25+_Arrival;bio09433847
+// 22;scq93766109;11:45+_Delayed_Arrival;svq7439299980;scq93766109;12:05+_
+// Departure; scq93766109; svq2323639855; 12: 30";
+
+// function getCode(str) {
+//   return satisfies.slice(0, 3).toUpperCase();
+
+// }
+// for (const flight of flightsInfo.split('+')) {
+//   const [type, from, to, time] = flight.split(';')
+//   const output = `${type.replaceAll("_", " ").trim() ${ getCode(from)
+// } ${ getCode(to) } (${time.replace(':', 'h')})}} ESTA SIN ACABAR
+
+//EJ OBJETOS
+//EJ 2
+const game = {
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+console.log(team1);
+console.log(draw);
+//EJ 3
+const games = {
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+};
+// for (const [index, player] of game.scored.entries())
+//   console.log(`Gol${index + 1}: ${player}`);
+const scorers = {};
+for (const xogador of games.scored) {
+  console.log(scorers[xogador]);
+  if (scorers[xogador]) {
+    scorers[xogador]++;
+  } else {
+    scorers[xogador] = 1;
+  }
+}
+//Copiado pero nn me sale igual
+//
+//
+//EJ Maps-Set
+//EJ 1
+const gameEvents = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow card'],
+  [69, 'Red card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow card'],
+]);
+//a
+// const set1 = new Set();
+// for (const [key, value] of gameEvents) {
+//   set1.add(value);
+// }
+// const eventos = [...set1]
+// console.log(eventos);
+// No siguiente fai o mismo pero en 1 paso (profesora)
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+//b
+for (const [key, value] of gameEvents) {
+  if (key <= 45) {
+    console.log(`[PRIMEIRA PARTE]${key}-->${value}`);
+  } else {
+    console.log(`[SEGUNDA PARTE]${key}-->${value}`);
+  }
+}
+//Outra forma de facelo, pola profe
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'PRIMEIRA' : 'SEGUNDA';
+  console.log(`[${half} PARTE] ${min}: ${event}`);
+}
