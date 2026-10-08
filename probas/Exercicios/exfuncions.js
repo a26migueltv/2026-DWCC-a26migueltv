@@ -72,10 +72,30 @@ console.log(calcMedia(100, 0, 100, 0));
 // EJ5
 console.log('EJERCICIO 5');
 
-const minMax = (...arraynumeros) => {
-  console.log('hola');
+const minMax = (arraynumeros) => {
   const minimo = Math.min(...arraynumeros);
   const maximo = Math.max(...arraynumeros);
   return { min: minimo, max: maximo };
 };
-console.log(minMax[(1, 2, 3, 4, 5)]);
+console.log(minMax([1, 2, 3, 4, 5]));
+
+// EJ6
+console.log('EJERCICIO 6');
+((lonxitude, ancho) => {
+  const area = lonxitude * ancho;
+  console.log(`El área del rectángulo es ${area}`);
+})(5, 3);
+//EJ7
+console.log('EJERCICIO 7');
+const validardni = (dni) => {
+  const numero = dni.slice(0, 8);
+  const letras = dni.slice(8, 9).toUpperCase();
+  const texto = 'TRWAGMYFPDXBNJZSQVHLCKE';
+  let resto = numero % 23;
+  if (letras === texto[resto]) return true;
+  else return false;
+};
+console.log(validardni('35643779n'));
+//EJ8?
+
+//EJ 9
