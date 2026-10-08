@@ -58,3 +58,24 @@ const suma2 = (...nums) => {
 };
 
 console.log(suma2(1, 2, 3, 4, 5));
+//EJ4
+console.log('EJERCICIO 4');
+const calcMedia = (...nums) => {
+  let total = 0;
+  for (const num of nums) {
+    total += num;
+  }
+  total = total / nums.length;
+  return total;
+};
+console.log(calcMedia(100, 0, 100, 0));
+// EJ5
+console.log('EJERCICIO 5');
+
+const minMax = (...arraynumeros) => {
+  console.log('hola');
+  const minimo = Math.min(...arraynumeros);
+  const maximo = Math.max(...arraynumeros);
+  return { min: minimo, max: maximo };
+};
+console.log(minMax[(1, 2, 3, 4, 5)]);
