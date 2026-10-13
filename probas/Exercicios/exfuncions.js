@@ -97,5 +97,139 @@ const validardni = (dni) => {
 };
 console.log(validardni('35643779n'));
 //EJ8?
-
+console.log('EJERCICIO 8');
 //EJ 9
+console.log('EJERCICIO 9');
+function buscarPatron2(texto, patron) {
+  let indiceTexto;
+  // Contador de cantos encontramos
+  let encontrados = 0;
+  let textoMaiusculas = texto.toUpperCase();
+  let patronMaiusculas = patron.toUpperCase();
+
+  for (indiceTexto = 0; indiceTexto < textoMaiusculas.length; indiceTexto++) {
+    let numeroCoincidencias = 0;
+    for (let indicePatron = 0; indicePatron < patron.length; indicePatron++) {
+      if (texto[indiceTexto + indicePatron] == patron[indicePatron])
+        numeroCoincidencias++;
+    }
+    if (numeroCoincidencias === patron.length) {
+      // Encontrada coincidencia
+      enconctados++;
+    }
+  }
+  return encontrados;
+}
+console.log(`“000111101000ABCHA”, “00”`);
+// //EJ 10
+// console.log('EJERCICIO 10');
+// const inicioXornada = '7:30';
+// const finalXornada = '17:45';
+
+// function axendarReunion(horaInicioReunionString, duracionEnMinutos) {
+//   let [horaInicioReunion, minutoInicioReunion] =
+//     horaInicioReunionString.split(':');
+//   let [horaInicioXornada, minutoInicioXornada] = inicioXornada.split(':');
+//   let [horaFinXornada, minutoFinXornada] = finalXornada.split(':');
+
+//   let inicioXornadaEnMinutos =
+//     Number(horaInicioXornada) * 60 + Number(minutoInicioXornada);
+//   let finXornadaEnMinutos =
+//     Number(horaFinXornada) * 60 + Number(minutoFinXornada);
+//   let finReunionEnMinutos = inicioReunionEnMinutos + duracionEnMinutos;
+
+//   if (inicioReunionEnMinutos < inicioXornadaEnMinutos) return false;
+//   else if (finXornadaEnMinutos < finReunionEnMinutos) return false;
+//   else return true;
+// }
+
+// console.assert(
+//   axendarReunion('7:00', 15) == false,
+//   'Fallo comprobando axendarReunion ("7:00", 15) == false ',
+// );
+// console.assert(
+//   axendarReunion('7:00', 30) == false,
+//   'Fallo comprobando axendarReunion ("7:00", 15) == false ',
+// );
+// // EJ 11
+// console.log('EJERCICIO 11');
+// tableiro = [
+//   [-1, 0, 0, 0],
+//   [0, 0, 0, 0],
+//   [0, -1, 0, 0],
+//   [0, 0, 0, 0],
+// ];
+// function calcularMinasAdxacentes(tableiro, x, y) {
+//   let minasEncontradas = 0;
+//   //Norte
+//   if (x > 0) {
+//     if (tableiro[x - 1][y] === -1) {
+//       minasEncontradas++;
+//     }
+//   }
+
+//   //Sur
+//   if (x < tableiro.length - 1) {
+//     if (tableiro[x + 1][y] === -1) {
+//       minasEncontradas++;
+//     }
+//   }
+
+//   //Este
+//   if (y < tableiro[x].length - 1) {
+//   } // Falta acabar a funcion
+//   function buscaminas(tableiro) {
+//     minas = [];
+//     minas2 = [];
+
+//     for (i = 0; i < tableiro.length; i++) {
+//       mins[i] = [];
+//       mina2[i] = [];
+
+//       for (j = 0; i < tableiro[i].length; j++) {
+//         if (tableiro[i][j] === -1) {
+//           minas[i][j] = -1;
+//           minas2[i][j] = -1;
+//         } else {
+//           minas[i][j] = calcularMinasAdxacentes(tableiro, i, j);
+//           minas[i][j] = calcularMinasAdxacentes2(tableiro, i, j);
+//         }
+//       }
+//     }
+
+//     console.log(minas);
+//     console.log(minas2);
+//     return minas;
+//   }
+//   buscainas(tableiro);
+// }
+// // SOLUCION 2
+// function calcularMinasAdxacentes2(tableiro, x, y) {
+//   let minasEncontradas = 0;
+//   for (let i = -1; i <= 1; i++) {
+//     for (let j = -1; j <= 1; j++) {
+//       if (tableiro[x + 1]?.[y + j] === -1) minasEncontradas++;
+//     }
+//   }
+//   return minasEncontradas;
+// }
+// Ejercicios de outros métodos interativos
+// EJ 1
+const persoas = [
+  { nome: 'aaron', idade: 65, id: 1 },
+  { nome: 'beth', idade: 2, id: 2 },
+  { nome: 'ánxeles', idade: 13, id: 3 },
+  { nome: 'daniel', idade: 3, id: 4 },
+  { nome: 'ada', idade: 25, id: 5 },
+  { nome: 'erea', idade: 1, id: 6 },
+  { nome: 'navia', idade: 43, id: 7 },
+];
+
+// A
+const persoasMaioresDeIdade = persoas.filter(function (edad) {
+  return edad.idade > 18;
+});
+console.log(persoasMaioresDeIdade);
+// B
+const map1 = persoas.map();
+console.log(map1.length(nome));
