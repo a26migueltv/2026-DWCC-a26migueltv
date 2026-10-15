@@ -215,6 +215,7 @@ console.log(`“000111101000ABCHA”, “00”`);
 // }
 // Ejercicios de outros métodos interativos
 // EJ 1
+console.log('Ejercicio 1');
 const persoas = [
   { nome: 'aaron', idade: 65, id: 1 },
   { nome: 'beth', idade: 2, id: 2 },
@@ -225,11 +226,84 @@ const persoas = [
   { nome: 'navia', idade: 43, id: 7 },
 ];
 
-// A
+//A
+console.log('Apartado A');
 const persoasMaioresDeIdade = persoas.filter(function (edad) {
   return edad.idade > 18;
 });
 console.log(persoasMaioresDeIdade);
 // B
-const map1 = persoas.map();
-console.log(map1.length(nome));
+console.log('Apartado B');
+const nomes = persoas.map(function (persoa) {
+  return persoa.nome;
+});
+console.log(nomes);
+// C
+console.log('Apartado C');
+
+const nomesMaioresMaiusculas = persoasMaioresDeIdade.map(function (persoa) {
+  return persoa.nome.toUpperCase();
+});
+console.log(nomesMaioresMaiusculas);
+// D
+console.log('Apartado D');
+const idENome = persoas.map(function (persoa) {
+  return { id: personalbar.id, nome: persoa.nome };
+});
+console.log(idENome);
+
+// EJ 2
+console.log('Ejercicio 2');
+const dias = [
+  'luns',
+  'martes',
+  'mercores',
+  'xoves',
+  'venres',
+  'sábado',
+  'domingo',
+];
+// A
+console.log('Apartado A');
+const diasConM = dias.filter(function (dia) {
+  return dia.startsWith('m');
+});
+console.log(diasConM);
+// B
+console.log('Apartado B');
+const algunConS = dias.some(function (dia) {
+  return dia.startsWith('s');
+});
+if (algunConS) {
+  console.log('algún día comeza por s');
+} else {
+  console.log('Ningúm día comeza por s');
+}
+// C
+console.log('Apartado C');
+const acabanConS = dias.every(function (dia) {
+  return dia.endsWith('s');
+});
+if (acabanConS) {
+  console.log('Todos os días acaban por S');
+} else {
+  console.log('Ningúm día acaba por s');
+}
+// D
+console.log('Apartado D');
+const comezaPorM = dias.find(function (dia) {
+  return dia.toLowerCase().startsWith('m');
+});
+console.log(comezaPorM);
+// E
+console.log('Apartado E');
+const indiceComezaPorM = dias.findIndex(function (dia) {
+  return dia.toLowerCase().startsWith('m');
+});
+console.log(indiceComezaPorM);
+// F
+console.log('Apartado F');
+const todoMaiusculas = dias.map(function (dia) {
+  return dia.toUpperCase();
+});
+console.log(todoMaiusculas);
