@@ -236,6 +236,7 @@ console.log(persoasMaioresDeIdade);
 console.log('Apartado B');
 const nomes = persoas.map(function (persoa) {
   return persoa.nome;
+  //Ca función flecha mellor
 });
 console.log(nomes);
 // C
@@ -307,3 +308,25 @@ const todoMaiusculas = dias.map(function (dia) {
   return dia.toUpperCase();
 });
 console.log(todoMaiusculas);
+// EJS REDUCE
+console.log('Ejs REDUCE');
+//ejercicio 1
+console.log('EJERCICIO 1');
+const objects = [{ price: 1 }, { price: 2 }, { price: 3 }];
+const sumaPrecios = objects.reduce(function (acumulador, obxecto) {
+  return acumulador + obxecto.price;
+}, 0);
+console.log(sumaPrecios);
+
+// Ejercicio 2
+const numeros = [7, 3, 12, -4, 9, 0];
+const minimo = numeros.reduce(function (minimo, numero) {
+  if (numero < minimo) {
+    return numero;
+  }
+  return minimoM;
+});
+console.log(minimo);
+// EJS PROGRAMACIÓN FUNCIONAL
+
+console.log('EJERCICIO 1');
