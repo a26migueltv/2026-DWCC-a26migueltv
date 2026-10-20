@@ -319,14 +319,134 @@ const sumaPrecios = objects.reduce(function (acumulador, obxecto) {
 console.log(sumaPrecios);
 
 // Ejercicio 2
-const numeros = [7, 3, 12, -4, 9, 0];
-const minimo = numeros.reduce(function (minimo, numero) {
-  if (numero < minimo) {
-    return numero;
-  }
-  return minimoM;
-});
-console.log(minimo);
+// const numeros = [7, 3, 12, -4, 9, 0];
+// const minimo = numeros.reduce(function (minimo, numero) {
+//   if (numero < minimo) {
+//     return numero;
+//   }
+//   return minimoM;
+// });
+// console.log(minimo);
 // EJS PROGRAMACIÓN FUNCIONAL
-
+//EJERCICIO 1
 console.log('EJERCICIO 1');
+const array = [4, 8, 3, 10, 5];
+function compareNumbers(a, b) {
+  if (a < b) return -1;
+  else if (a > b) return 1;
+  else return 0;
+}
+const arrayOrdenado = array.sort(compareNumbers);
+console.log(arrayOrdenado);
+//Solucion profe
+
+function ordenarArray(notas) {
+  return notas.sort((a, b) => a - b);
+}
+const notas = [4, 8, 3, 10, 5];
+console.log(`Notas ordenadas = [${ordenarArray(notas).join(', ')}]`);
+// EJERCICIO 2
+console.log('EJERCICIO 2');
+const arr = [1, 2, 3];
+const max = arr.reduce((a, b) => Math.max(a, b), -Infinity);
+// está mal creo
+
+//EJERCICIO 3
+console.log('EJERCICIO 3');
+const inventors = [
+  { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+  { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+  { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+  { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+  { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+  { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+  { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+  { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+  { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+  { first: 'Sarah', last: 'Goode', year: 1855, passed: 1905 },
+  { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+  { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 },
+];
+
+// A - século XVI (1501-1600)
+const seculoXVI = inventors.filter(function (inventor) {
+  return inventor.year >= 1501 && inventor.year <= 1600;
+});
+console.log(seculoXVI);
+
+// B
+const nomesCompletos = inventors.map(function (inventor) {
+  return inventor.first + ' ' + inventor.last;
+});
+console.log(nomesCompletos);
+
+// C - split(' ') separa "Albert Einstein" en ['Albert', 'Einstein']
+nomesCompletos.sort(function (a, b) {
+  const apelidoA = a.split(' ')[1];
+  const apelidoB = b.split(' ')[1];
+  return apelidoA.localeCompare(apelidoB); // compara textos alfabeticamente
+});
+console.log(nomesCompletos);
+// No examen caen exercicios destes
+// D
+inventors.sort(function (a, b) {
+  return a.last.localeCompare(b.last);
+});
+console.log(inventors);
+
+// E
+inventors.sort(function (a, b) {
+  return a.year - b.year;
+});
+console.log(inventors);
+
+// F
+const sumaAnos = inventors.reduce(function (total, inventor) {
+  return total + (inventor.passed - inventor.year);
+}, 0);
+console.log(sumaAnos); // 861
+
+// G - b menos a para que vaia de maior a menor
+inventors.sort(function (a, b) {
+  const anosA = a.passed - a.year;
+  const anosB = b.passed - b.year;
+  return anosB - anosA;
+});
+console.log(inventors);
+
+//EJERCICIO 4
+const data = [
+  'car',
+  'car',
+  'truck',
+  'truck',
+  'bike',
+  'walk',
+  'car',
+  'van',
+  'bike',
+  'walk',
+  'car',
+  'van',
+  'car',
+  'truck',
+  'pogostick',
+];
+
+// O acumulador empeza sendo un obxecto baleiro {}
+const transportes = data.reduce(function (contador, transporte) {
+  if (contador[transporte]) {
+    contador[transporte]++; // xa existía: sumamos 1
+  } else {
+    contador[transporte] = 1; // primeira vez que aparece
+  }
+  return contador;
+}, {});
+console.log(transportes);
+//O DA PROFE:
+// const transportes = data.reduce((contador, transporte) => {
+//   contador[transporte] ? cotador[transporte]++ : (contador[transporte] = 1);
+//   return contador;
+// }, {});
+// console.log(transportes);
+// { car: 5, truck: 3, bike: 2, walk: 2, van: 2, pogostick: 1 }
