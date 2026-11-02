@@ -27,6 +27,6 @@ console.log(ligTercP.length);
 
 // Modifica os estilos das ligazóns a naranxa
 
-for (const ref of refs) {
-  ref.style.backgroundColor = 'orange';
+for (const pr of proba) {
+  pr.style.color = 'orange';
 }
