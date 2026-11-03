@@ -1,7 +1,15 @@
 'use strict';
 
-const boton = document.getelementById('boton');
-let campoTexto = document.getelementById('texto');
+const boton = document.getElementById('boton');
+let campoTexto = document.getElementById('example');
+const list = document.querySelector('ul');
+let texto = '';
+function handler() {
+  texto = campoTexto.value;
+  const li = document.createElement('li');
+  li.textContent = texto;
+  list.appendChild(li);
+  texto = '';
+}
 
-const atributo = Element.attributes[0];
-XPathResult.value = atributo.value;
+boton.addEventListener('click', handler);
