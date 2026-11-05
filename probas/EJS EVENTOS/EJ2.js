@@ -9,7 +9,6 @@ function handler() {
   const li = document.createElement('li');
   li.textContent = texto;
   list.appendChild(li);
-  texto = '';
 }
 
 boton.addEventListener('click', handler);
