@@ -20,3 +20,27 @@ function handler3() {
 }
 
 boton.addEventListener('click', handler3);
+
+// Apartado 3, cando se escribe: a info da tecla sale no div e tamén o código da tecla pulsada. Ademáis si o div estaba oculto debe mostrarse.
+let tecla = '';
+let codTecla = '';
+let areatexto = document.getElementById('textoExercicio1');
+let div = document.getElementById('div');
+// keydown;
+
+// KeyboardEvent.key;
+// KeyboardEvent.code;
+
+function handler4(event) {
+  tecla = event.keyboardEvent.key;
+  let añadir = document.createElement('p');
+  añadir.textContent = tecla;
+  div.appendChild(añadir);
+}
+areatexto.addEventListener('keydown', handler4);
+// function handler() {
+//   texto = campoTexto.value;
+//   const li = document.createElement('li');
+//   li.textContent = texto;
+//   list.appendChild(li);
+// }
