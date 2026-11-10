@@ -26,57 +26,10 @@ let tecla = '';
 let codTecla = '';
 let areatexto = document.getElementById('textoExercicio1');
 let div = document.getElementById('div');
-// keydown;
 
-// KeyboardEvent.key;
-// KeyboardEvent.code;
+areatexto.addEventListener('keyup', (evento) => {
+  div.classList.remove('oculto');
 
-function handler4(event) {
-  tecla = event.keyboardEvent.key;
-  let añadir = document.createElement('p');
-  añadir.textContent = tecla;
-  div.appendChild(añadir);
-}
-areatexto.addEventListener('keydown', handler4);
-// function handler() {
-//   texto = campoTexto.value;
-//   const li = document.createElement('li');
-//   li.textContent = texto;
-//   list.appendChild(li);
-// }
-// const textarea = document.getElementById('test-target');
-// const consoleLog = document.getElementById('console-log');
-// const btnReset = document.getElementById('btn-reset');
-
-// function logMessage(message) {
-//   consoleLog.innerText += `${message}\n`;
-// }
-
-// textarea.addEventListener('keydown', (e) => {
-//   if (!e.repeat) {
-//     logMessage(`Key "${e.key}" pressed [event: keydown]`);
-//   } else {
-//     logMessage(`Key "${e.key}" repeating [event: keydown]`);
-//   }
-// });
-
-// textarea.addEventListener('beforeinput', (e) => {
-//   logMessage(`Key "${e.data}" about to be input [event: beforeinput]`);
-// });
-
-// textarea.addEventListener('input', (e) => {
-//   logMessage(`Key "${e.data}" input [event: input]`);
-// });
-
-// textarea.addEventListener('keyup', (e) => {
-//   logMessage(`Key "${e.key}" released [event: keyup]`);
-// });
-
-// btnReset.addEventListener('click', (e) => {
-//   let child = consoleLog.firstChild;
-//   while (child) {
-//     consoleLog.removeChild(child);
-//     child = consoleLog.firstChild;
-//   }
-//   textarea.value = '';
-// });
+  div.innerText = `Tecla pulsada: ${evento.key}. Código: ${evento.code}`;
+});
+// Falta algo, nn está ben de todo
